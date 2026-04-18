@@ -81,41 +81,68 @@ REDIS_URL=your_redis_url
 ```bash
 git clone https://github.com/ansarialiakbar/AI_Task_App.git
 cd ai-task-app
+```
+
 2. Run using Docker
+
 docker-compose up --build
+
 3. Access the app
+
 Frontend → http://localhost:5173
+
 Backend → http://localhost:5000
+
 🧪 Running Without Docker (Optional)
+
 Start MongoDB & Redis first
+
 docker-compose up -d mongodb redis
-Backend
+
+## Backend
+```
 cd backend
 npm install
 npm run start
-Frontend
+```
+
+## Frontend
+```
 cd frontend
 npm install
 npm run dev
-Worker
+```
+## Worker
+```
 cd worker
 pip install -r requirements.txt
 python -m app.worker
-🌐 Deployment
+```
+
+## 🌐 Deployment
+
 Service	Platform
 Frontend	Netlify
 Backend	Render
 Worker	Render
 Redis	Upstash
 MongoDB	MongoDB Atlas
-🔗 Live URLs
+
+## 🔗 Live URLs
+```
 Frontend: https://your-app.netlify.app
 Backend: https://your-api.onrender.com
-🧠 System Architecture
+```
+
+## 🧠 System Architecture
+```
 User → Frontend → Backend → MongoDB
                      ↓
                    Redis → Worker → MongoDB
-🔄 Workflow
+```
+
+## 🔄 Workflow
+
 User registers/logs in
 User creates a task
 Backend stores task in MongoDB
@@ -123,21 +150,29 @@ Task is pushed to Redis queue
 Worker picks task and processes it
 Result is saved in MongoDB
 Frontend displays updated task status
-⚠️ Important Notes
+
+## ⚠️ Important Notes
+
 Redis is required for background processing
 MongoDB must be running before backend starts
 Worker must be running for task execution
-❗ Limitations
+
+## ❗ Limitations
+
 No Kubernetes deployment (Argo CD not implemented)
 Basic error handling
 No retry mechanism for failed tasks
-🔮 Future Improvements
+
+## 🔮 Future Improvements
+
 Kubernetes deployment
 CI/CD pipeline
 Task retry system
 Logging & monitoring
 Role-based authentication
-📦 .gitignore (Root)
+
+## 📦 .gitignore (Root)
+```
 node_modules/
 .env
 .env.*
@@ -145,7 +180,9 @@ dist/
 build/
 __pycache__/
 *.log
-👨‍💻 Author
+```
+
+## 👨‍💻 Author
 
 Ali Akbar
-GitHub: https://github.com/your-username
+GitHub: https://github.com/ansarialiakbar
