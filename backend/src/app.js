@@ -20,4 +20,9 @@ app.use(rateLimit({
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/tasks", require("./routes/taskRoutes"));
 
+//  Test Route
+app.get('/', (req, res) => {
+  res.send('Server is running fine!');
+});
+
 module.exports = app;
