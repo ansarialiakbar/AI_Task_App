@@ -119,21 +119,6 @@ pip install -r requirements.txt
 python -m app.worker
 ```
 
-## 🌐 Deployment
-
-Service	Platform
-Frontend	Netlify
-Backend	Render
-Worker	Render
-Redis	Upstash
-MongoDB	MongoDB Atlas
-
-## 🔗 Live URLs
-```
-Frontend: https://your-app.netlify.app
-Backend: https://your-api.onrender.com
-```
-
 ## 🧠 System Architecture
 ```
 User → Frontend → Backend → MongoDB
