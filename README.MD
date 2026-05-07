@@ -2,7 +2,7 @@
 
 A full-stack AI Task Processing application that allows users to create tasks, process them asynchronously, and track results in real time.
 
----
+
 
 ## 📌 Features
 
@@ -12,8 +12,8 @@ A full-stack AI Task Processing application that allows users to create tasks, p
 - 📊 Task Status Tracking (pending, running, success, failed)
 - 📜 View Task Logs & Results
 - 🔁 Background processing using Redis queue
+ 
 
----
 
 ## 🛠️ Tech Stack
 
@@ -40,11 +40,11 @@ A full-stack AI Task Processing application that allows users to create tasks, p
 - Docker
 - Docker Compose
 
----
+
 
 ## 📁 Project Structure
 
-
+```
 ai-task-app/
 │── backend/
 │── frontend/
@@ -52,9 +52,7 @@ ai-task-app/
 │── docker-compose.yml
 │── .gitignore
 │── README.md
-
-
----
+```
 
 ## ⚙️ Environment Variables
 
@@ -72,28 +70,32 @@ MONGO_URI=your_mongodb_url
 REDIS_URL=your_redis_url
 
 
----
+
 
 ## 🚀 Local Setup (Docker)
 
 ### 1. Clone the repository
 
-```bash
+```
 git clone https://github.com/ansarialiakbar/AI_Task_App.git
 cd ai-task-app
 ```
 
-2. Run using Docker
+### 2. Run using Docker
 
+```
 docker-compose up --build
+```
 
-3. Access the app
+### 3. Access the app
 
+```
 Frontend → http://localhost:5173
 
 Backend → http://localhost:5000
+```
 
-🧪 Running Without Docker (Optional)
+### 🧪 Running Without Docker (Optional)
 
 Start MongoDB & Redis first
 
@@ -118,7 +120,6 @@ cd worker
 pip install -r requirements.txt
 python -m app.worker
 ```
-
 
 
 ##  Screenshots
