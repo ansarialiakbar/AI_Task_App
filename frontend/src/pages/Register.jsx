@@ -1,33 +1,107 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import API from "../api/axios";
 
 export default function Register() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await API.post("/auth/register", { email, password });
+
+    await API.post("/auth/register", {
+      name,
+      email,
+      password,
+    });
+
     alert("Registered successfully");
     window.location.href = "/login";
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <form className="bg-white p-6 rounded shadow-md w-80" onSubmit={handleSubmit}>
-        <h2 className="text-xl font-bold mb-4">Register</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20 px-4">
+      <div className="card w-full max-w-md bg-base-100 shadow-2xl">
+        <div className="card-body">
+          
+          <div className="text-center mb-4">
+            <h2 className="text-3xl font-bold">Create Account</h2>
+            <p className="text-base-content/70 mt-1">
+              Join us and start your journey 🚀
+            </p>
+          </div>
 
-        <input className="w-full p-2 border mb-3 rounded" placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)} />
+          <form onSubmit={handleSubmit} className="space-y-4">
 
-        <input type="password" className="w-full p-2 border mb-3 rounded"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)} />
+            {/* Name */}
+            <div>
+              <label className="label">
+                <span className="label-text font-medium">Name</span>
+              </label>
 
-        <button className="w-full bg-green-500 text-white py-2 rounded">
-          Register
-        </button>
-      </form>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="input input-bordered w-full"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="label">
+                <span className="label-text font-medium">Email</span>
+              </label>
+
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="input input-bordered w-full"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            {/* Password */}
+            <div>
+              <label className="label">
+                <span className="label-text font-medium">Password</span>
+              </label>
+
+              <input
+                type="password"
+                placeholder="Enter your password"
+                className="input input-bordered w-full"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
+            <button className="btn btn-primary w-full text-white">
+              Register
+            </button>
+          </form>
+
+          {/* Toggle */}
+          <div className="divider">OR</div>
+
+          <p className="text-center text-sm">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="text-primary font-semibold hover:underline"
+            >
+              Login
+            </Link>
+          </p>
+
+        </div>
+      </div>
     </div>
   );
 }
