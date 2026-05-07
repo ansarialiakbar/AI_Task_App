@@ -183,5 +183,6 @@ __pycache__/
 
 ## 👨‍💻 Author
 
-Ali Akbar
+Ali Akbar Ansari
+
 GitHub: https://github.com/ansarialiakbar
